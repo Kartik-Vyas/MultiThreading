@@ -1,18 +1,18 @@
 class BookTheaterSeat
 {
-    int totalSeat = 0;
-    synchronized void bookSeat(int seats)
+    int totalSeat = 10;
+    public void bookSeat(int seats)
     {
         if(totalSeat>=seats)
         {
             System.out.println("seat booking successful");
             totalSeat = totalSeat-seats;
-            System.out.println("seats left :" + seats);
+            System.out.println("seats left :" + totalSeat);
         }
         else
         {
             System.out.println("seat not booked");
-            System.out.println("seats left: " + seats);
+            System.out.println("seats left: " + totalSeat);
         }
     }
 }
@@ -24,8 +24,8 @@ class BookingApp extends Thread {
         b.bookSeat(seats);
     }
 
-    public class SynchronizedMethodDemo {
-        public static void main(String[] args) {
+    public static void main(String[] args)
+        {
             b = new BookTheaterSeat();
             BookingApp deepak = new BookingApp();
             deepak.seats = 7;
@@ -37,4 +37,3 @@ class BookingApp extends Thread {
 
         }
     }
-}
