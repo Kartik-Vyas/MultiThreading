@@ -20,4 +20,3 @@ public class InterruptMethodDemo {
         im.interrupt();
     }
 }
-
